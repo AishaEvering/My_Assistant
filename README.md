@@ -6,19 +6,9 @@
 
 In our fast-paced world, having a personal assistant can make life significantly easier. While some are fortunate enough to have one, most of us rely on virtual assistants like Alexa, Siri, Google Assistant, and now, My Assistant.
 
-My Assistant is a fine-tuned DistilBERT model optimized for multiclass text classification. Trained on the [Bhuvaneshwari/intent_classification Hugging Face dataset](https://huggingface.co/datasets/Bhuvaneshwari/intent_classification) from Hugging Face, it accurately predicts customer intents across a range of categories, including:
-- Add To Playlist
-- Affirmation
-- Book Meeting
-- Book Restaurant
-- Cancellation
-- Excitment
-- Get Weather
-- Greetings
-- Play Music
-- Rate Book
-- Search Creative Work
-- Search Screening Event
+My Assistant is a fine-tuned DistilBERT model optimized for multiclass text classification. Trained on the [Bhuvaneshwari/intent_classification Hugging Face dataset](https://huggingface.co/datasets/Bhuvaneshwari/intent_classification) from Hugging Face, it accurately predicts customer intents across a range of categories, including: 
+
+[<i>Add To Playlist, Affirmation, Book Meeting, Book Restaurant, Cancellation, Excitment, Get Weather, Greetings, Play Music, Rate Book, Search Creative Work, Search Screening Event</i>]
 
 ## Technologies
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white)
@@ -36,30 +26,19 @@ My Assistant is a fine-tuned DistilBERT model optimized for multiclass text clas
 ## Key Takeaways
 ${{\color{green}\Huge{\textsf{PyTorch\ Seems\ Easier\ with\ Hugging\ Face\ \}}}}\$
 
-Initially, I thought my problem was multi-label classification because it involved multiple characteristics of artwork, such as artist, genre, and style. However, I quickly realized that this wasn't the case. Multi-label classification applies when each artwork can have multiple labels in each category (e.g., multiple artists or styles). In my scenario, each artwork is associated with exactly one artist, one genre, and one style, making it a multi-class classification problem.
-
-To align with this, I had to make several adjustments:
-
-* Data Encoding: Switched from MultiLabelBinarizer to One-Hot Encoding.
-* Loss Function: Changed from Binary Cross-Entropy (BCE) to Cross-Entropy Loss.
-* Activation Function: Transitioned from Sigmoid to Softmax.
-
-These changes were essential to correctly model the classification task and highlighted the important distinction between multi-label and multi-class problems.
-
+During this project, I encountered numerous transformer versioning issues. As a developer accustomed to constant change, I found the rapid evolution in the machine learning field particularly intense. When searching for help online, I often had to check dates, as the community might have moved on from older methods quite quickly. This wasn’t as prominent during my work on a PyTorch project. It might be due to the larger number of developers working with PyTorch or my increased use of Hugging Face transformers. Despite Hugging Face offering both PyTorch and TensorFlow versions of their models, TensorFlow sometimes feels like the “red-headed stepchild”—that’s a reference to Annie, for those who might not be familiar. However, [legacy documentation](https://huggingface.co/transformers/v3.2.0/custom_datasets.html) proved to be incredibly helpful. This experience leads me to my next topic...
 ***
 
+${{\color{green}\Huge{\textsf{Do\ We\ Still\ Use\ Training\ Arguments?\ \}}}}\$
+
+To address the remaining imbalance in the genre and style labels, I chose to retain the dataset as is and leverage the compute_class_weight function to adjust the class weights in the model's loss function. This approach increased the importance of underrepresented classes while reducing the weight of overrepresented ones. As a result, this adjustment not only reduced the loss but also enhanced the model’s accuracy.
+***
 
 ${{\color{green}\Huge{\textsf{What\ Is\ BERT?\ \}}}}\$
 
 The dataset exhibited significant imbalance across all labels—artist, genre, and style—with an even greater disparity for the artist label. Over half of the data had unknown artists, and many artists had only a few artworks. Unlike genre and style, the artist label lacked sufficient breadth and diversity for effective model training. Consequently, I decided to remove the artist label to improve the model's overall performance.
 
 In the future, I might revisit this aspect by focusing on a select group of top artists, such as training a model specifically to recognize Vincent Van Gogh's works. For now, the project's focus remains on broadly classifying artworks based on genre and style.
-
-***
-
-${{\color{green}\Huge{\textsf{Do\ We\ Still\ Use\ Training\ Arguments?\ \}}}}\$
-
-To address the remaining imbalance in the genre and style labels, I chose to retain the dataset as is and leverage the compute_class_weight function to adjust the class weights in the model's loss function. This approach increased the importance of underrepresented classes while reducing the weight of overrepresented ones. As a result, this adjustment not only reduced the loss but also enhanced the model’s accuracy.
 
 ***
 
