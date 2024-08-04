@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://github.com/AishaEvering/Art_Geek/blob/main/images/modern-art-banner.png" alt="Art Logo">
+   <img src="https://github.com/AishaEvering/My_Assistant/blob/main/my_assistant_header.png" alt="My Assistant Logo">
 </p>
 
 # Art Geek 🎨
