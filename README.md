@@ -35,10 +35,7 @@ I’ve noticed that there’s a shift away from using TrainingArguments and the 
 ***
 
 ${{\color{green}\Huge{\textsf{What\ Is\ BERT?\ \}}}}\$
-
-The dataset exhibited significant imbalance across all labels—artist, genre, and style—with an even greater disparity for the artist label. Over half of the data had unknown artists, and many artists had only a few artworks. Unlike genre and style, the artist label lacked sufficient breadth and diversity for effective model training. Consequently, I decided to remove the artist label to improve the model's overall performance.
-
-In the future, I might revisit this aspect by focusing on a select group of top artists, such as training a model specifically to recognize Vincent Van Gogh's works. For now, the project's focus remains on broadly classifying artworks based on genre and style.
+BERT is an encoder-only transformer architecture.  As a visual learner, this part <img src="https://github.com/AishaEvering/My_Assistant/blob/main/encoder.png" alt="Encoder Only Transformer Archecture"> for the most part you need to add linear and softmax output layers.  BERT is used in applications such as summarization, sentiment analysis, question answering systems, and text classification. For this project, I’m using the distilled version of the model because it’s smaller and faster. The real magic lies in the attention or multi-head attention layers, where the model determines the context of words. It’s a true testament to the power of math, and the nerd in me thinks it’s incredibly cool.
 
 ***
 
