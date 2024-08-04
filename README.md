@@ -6,7 +6,7 @@
 
 In our fast-paced world, having a personal assistant can make life significantly easier. While some are fortunate enough to have one, most of us rely on virtual assistants like Alexa, Siri, Google Assistant, and now, My Assistant.
 
-My Assistant is a fine-tuned DistilBERT model optimized for multiclass text classification. Trained on the [Bhuvaneshwari/intent_classification Hugging Face dataset](https://huggingface.co/datasets/Bhuvaneshwari/intent_classification) from Hugging Face, it accurately predicts customer intents across a range of categories, including: 
+My Assistant is a fine-tuned DistilBERT model optimized for multiclass text classification. Trained on the [Bhuvaneshwari/intent_classification dataset](https://huggingface.co/datasets/Bhuvaneshwari/intent_classification) from Hugging Face, it accurately predicts customer intents across a range of categories, including: 
 
 [<i>Add To Playlist, Affirmation, Book Meeting, Book Restaurant, Cancellation, Excitment, Get Weather, Greetings, Play Music, Rate Book, Search Creative Work, Search Screening Event</i>]
 
