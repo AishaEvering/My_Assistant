@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://github.com/AishaEvering/My_Assistant/blob/main/my_assistant_header.png" height="100%" width="700" alt="My Assistant Logo">
+   <img src="https://github.com/AishaEvering/My_Assistant/blob/main/my_assistant_header.png" height="300" width="900" alt="My Assistant Logo">
 </p>
 
 # My Assistant 🤖
@@ -31,7 +31,7 @@ During this project, I encountered numerous transformer versioning issues. As a 
 
 ${{\color{green}\Huge{\textsf{Do\ We\ Still\ Use\ Training\ Arguments?\ \}}}}\$
 
-To address the remaining imbalance in the genre and style labels, I chose to retain the dataset as is and leverage the compute_class_weight function to adjust the class weights in the model's loss function. This approach increased the importance of underrepresented classes while reducing the weight of overrepresented ones. As a result, this adjustment not only reduced the loss but also enhanced the model’s accuracy.
+I’ve noticed that there’s a shift away from using TrainingArguments and the Trainer class. The current approach involves setting up an optimizer, activation function, and crafting a training loop similar to what you’d do with PyTorch. Please correct me if I’m mistaken. This change underscores the importance of knowing the correct version of transformers to use, as getting it wrong can lead to a host of errors during model downloading and training. Regardless, I believe it’s still beneficial to be familiar with older methods, as companies often don’t adapt as quickly as the latest libraries. Being knowledgeable about established practices can still be a significant advantage.
 ***
 
 ${{\color{green}\Huge{\textsf{What\ Is\ BERT?\ \}}}}\$
