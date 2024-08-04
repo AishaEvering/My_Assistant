@@ -1,13 +1,27 @@
 <p align="center">
-   <img src="https://github.com/AishaEvering/My_Assistant/blob/main/my_assistant_header.png" alt="My Assistant Logo">
+   <img src="https://github.com/AishaEvering/My_Assistant/blob/main/my_assistant_header.png" height="100%" width="700" alt="My Assistant Logo">
 </p>
 
-# Art Geek 🎨
+# My Assistant 🤖
 
-I'm diving into the world of art classification with cutting-edge neural networks! This project leverages the diverse [WikiArt dataset](https://huggingface.co/datasets/huggan/wikiart) from Hugging Face to train models that classify artworks into multiple categories, including genre and style. Unlike traditional single-label tasks, my approach tackles the complexity of multi-class classification, predicting multiple attributes of each piece to provide a rich, nuanced understanding of artistic creations.
+In our fast-paced world, having a personal assistant can make life significantly easier. While some are fortunate enough to have one, most of us rely on virtual assistants like Alexa, Siri, Google Assistant, and now, My Assistant.
+
+My Assistant is a fine-tuned DistilBERT model optimized for multiclass text classification. Trained on the [Bhuvaneshwari/intent_classification Hugging Face dataset](https://huggingface.co/datasets/Bhuvaneshwari/intent_classification) from Hugging Face, it accurately predicts customer intents across a range of categories, including:
+- Add To Playlist
+- Affirmation
+- Book Meeting
+- Book Restaurant
+- Cancellation
+- Excitment
+- Get Weather
+- Greetings
+- Play Music
+- Rate Book
+- Search Creative Work
+- Search Screening Event
 
 ## Technologies
-![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white)
 [![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)](https://www.python.org/)
 [![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org/)
 [![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)](https://numpy.org/)
@@ -15,12 +29,12 @@ I'm diving into the world of art classification with cutting-edge neural network
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org/stable/)
 [![Jupyter Notebook](https://img.shields.io/badge/jupyter-%23FA0F00.svg?style=for-the-badge&logo=jupyter&logoColor=white)](https://jupyter.org/)
 
-## [Live Demo](https://huggingface.co/spaces/AishaE/art_geek)
+## [Live Demo](https://huggingface.co/spaces/AishaE/My_Assistant)
 
-## 📙 [Jupyter Notebook](https://github.com/AishaEvering/Art_Geek/blob/main/Art_Geek.ipynb)
+## 📙 [Jupyter Notebook](https://github.com/AishaEvering/My_Assistant/blob/main/My_Assistant.ipynb)
 
 ## Key Takeaways
-${{\color{magenta}\Huge{\textsf{Understanding\ Multi-Label\ vs.\ Multi-Class\ Classification\ \}}}}\$
+${{\color{green}\Huge{\textsf{PyTorch\ Seems\ Easier\ with\ Hugging\ Face\ \}}}}\$
 
 Initially, I thought my problem was multi-label classification because it involved multiple characteristics of artwork, such as artist, genre, and style. However, I quickly realized that this wasn't the case. Multi-label classification applies when each artwork can have multiple labels in each category (e.g., multiple artists or styles). In my scenario, each artwork is associated with exactly one artist, one genre, and one style, making it a multi-class classification problem.
 
@@ -35,7 +49,7 @@ These changes were essential to correctly model the classification task and high
 ***
 
 
-${{\color{magenta}\Huge{\textsf{Removed\ Artist\ as\ a\ Classification\ Characteristic\ \}}}}\$
+${{\color{green}\Huge{\textsf{What\ Is\ BERT?\ \}}}}\$
 
 The dataset exhibited significant imbalance across all labels—artist, genre, and style—with an even greater disparity for the artist label. Over half of the data had unknown artists, and many artists had only a few artworks. Unlike genre and style, the artist label lacked sufficient breadth and diversity for effective model training. Consequently, I decided to remove the artist label to improve the model's overall performance.
 
@@ -43,13 +57,13 @@ In the future, I might revisit this aspect by focusing on a select group of top 
 
 ***
 
-${{\color{magenta}\Huge{\textsf{Handling\ Imbalanced\ Data\ \}}}}\$
+${{\color{green}\Huge{\textsf{Do\ We\ Still\ Use\ Training\ Arguments?\ \}}}}\$
 
 To address the remaining imbalance in the genre and style labels, I chose to retain the dataset as is and leverage the compute_class_weight function to adjust the class weights in the model's loss function. This approach increased the importance of underrepresented classes while reducing the weight of overrepresented ones. As a result, this adjustment not only reduced the loss but also enhanced the model’s accuracy.
 
 ***
 
-${{\color{magenta}\Huge{\textsf{Efficient\ Net\ vs.\ Vision\ Transformer\ \}}}}\$
+${{\color{green}\Huge{\textsf{Final\ Results\ \}}}}\$
 
 In this project, I evaluated the performance of EfficientNet and Vision Transformer (ViT) models using transfer learning. EfficientNet was chosen for its compact size, efficiency, and strong representation of convolutional neural networks (CNNs). Conversely, ViT was selected to explore whether transformers might outperform CNNs for certain tasks. Additionally, I experimented with various image augmentations. However, these experiments were less successful compared to the base models, which is understandable given that altering artwork could significantly change its genre or style.
 
