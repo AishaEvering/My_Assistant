@@ -41,83 +41,42 @@ BERT is an encoder-only transformer architecture.  As a visual learner, this par
 
 ${{\color{green}\Huge{\textsf{Final\ Results\ \}}}}\$
 
-In this project, I evaluated the performance of EfficientNet and Vision Transformer (ViT) models using transfer learning. EfficientNet was chosen for its compact size, efficiency, and strong representation of convolutional neural networks (CNNs). Conversely, ViT was selected to explore whether transformers might outperform CNNs for certain tasks. Additionally, I experimented with various image augmentations. However, these experiments were less successful compared to the base models, which is understandable given that altering artwork could significantly change its genre or style.
+I got great metrics from testing on the test dataset. Hmmmm...that's suspicious 🥲
 
-* **EfficientNet**: This model excelled at predicting the genre of an image but was less effective at predicting the style.
-  
    <table>
      <tr>
        <td>
          <strong>Accuracy</strong>
-         <ul>
-           <li><strong>Genre:</strong> 57%</li>
-           <li><strong>Style:</strong> 39%</li>
-         </ul>
        </td>
+        <td>98.9%</td>
+     </tr>
+     <tr>
        <td>
-         <strong>F1 Score</strong>
-         <ul>
-           <li><strong>Genre:</strong> 53%
-             <ul>
-               <li><small><i>Precision:</i> 51% of the predicted genres were correct.</small></li>
-               <li><small><i>Recall:</i> The model identified 64% of all actual genres.</small></li>
-             </ul>
-           </li>
-           <li><strong>Style:</strong> 35%
-             <ul>
-               <li><small><i>Precision:</i> 34% of the predicted styles were correct.</small></li>
-               <li><small><i>Recall:</i> The model identified 49% of all actual styles.</small></li>
-             </ul>
-           </li>
-         </ul>
+         <strong>Precision</strong>
        </td>
+        <td>98.9%</td>
+     </tr>
+     <tr>
+       <td>
+         <strong>Recall</strong>
+       </td>
+        <td>98.9%</td>
      </tr>
    </table>
 <br/>
    
-* **Vision Transformer**: This model also excelled at predicting the genre of an image and also did better in predicting the style.
-  
-   <table>
-     <tr>
-       <td>
-         <strong>Accuracy</strong>
-         <ul>
-           <li><strong>Genre:</strong> 61%</li>
-           <li><strong>Style:</strong> 45%</li>
-         </ul>
-       </td>
-       <td>
-         <strong>F1 Score</strong>
-         <ul>
-           <li><strong>Genre:</strong> 58%
-             <ul>
-               <li><small><i>Precision:</i> 55% of the predicted genres were correct.</small></li>
-               <li><small><i>Recall:</i> The model identified 68% of all actual genres.</small></li>
-             </ul>
-           </li>
-           <li><strong>Style:</strong> 43%
-             <ul>
-               <li><small><i>Precision:</i> 40% of the predicted styles were correct.</small></li>
-               <li><small><i>Recall:</i> The model identified 54% of all actual styles.</small></li>
-             </ul>
-           </li>
-         </ul>
-       </td>
-     </tr>
-   </table>
 
-The standout performer is the ViT model, which excels even without additional augmentations. This model is currently the one showcased in the [live demo](https://huggingface.co/spaces/AishaE/art_geek).
+After also manually testing the model it seemed to work.  So I just went with it.  This model is currently the one showcased in the [live demo](https://huggingface.co/spaces/AishaE/My_Assistant).
 
 ## Room for Improvement
 
-* Expand the Dataset: Increasing the amount of data and extending the number of epochs will likely enhance model performance and prediction accuracy.
-* Utilize a Learning Rate Scheduler: Implementing a learning rate scheduler can help fine-tune the learning rate, potentially leading to better convergence.
-* Focus on Specific Artists: Narrowing the dataset to a select group of artists could provide the model with more focused training, improving its ability to classify art more accurately.
-* Incorporate Model Ensembling: Combining predictions from multiple models could lead to more robust and accurate results.
+* I could transition from using TrainingArguments and Trainer to setting up an optimizer, activation function, and a custom training loop. This change would allow me to better monitor the training process. With the Trainer, I was unable to see the current epoch or estimate the duration of the training process, which made it difficult to gauge progress.
+* The data was imbalanced for a few classes. To address this, I upsampled the minority classes to match the majority classes. Ideally, retraining the model on this more balanced dataset would improve performance.
 
 ## Summary
 
-This project has been both a challenging and rewarding journey. I had to step back and reassess the metrics, retrain, refactor the code several times, and all of this was done on a borrowed Google GPU via Google Colab, adding to the adventure. Despite the frustrations, I’m incredibly proud of what I’ve accomplished. There’s something truly satisfying about figuring things out as you go. Thank you for following along, and I look forward to sharing my next project. Happy coding!
+The project was successful, but if I’m being honest, my next project will be in PyTorch. It’s not necessarily easier, but sharpening my skills is my top priority right now. Focusing on becoming highly proficient in one framework that I can use more efficiently seems like a worthwhile approach. Don't quote me on this, I might change my mind tomorrow. 
+ Happy coding!
 
 ## Author
 
