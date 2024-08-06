@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://github.com/AishaEvering/My_Assistant/blob/main/my_assistant_header.png" height="300" width="900" alt="My Assistant Logo">
+   <img src="https://github.com/AishaEvering/My_Assistant/blob/main/how_can_I_help_you.jpeg" height="300" width="500" alt="My Assistant Logo">
 </p>
 
 # My Assistant 🤖
